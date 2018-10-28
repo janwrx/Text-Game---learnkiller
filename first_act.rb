@@ -41,13 +41,14 @@ class First < Story
     puts "1. #{w1.capitalize}, 2. #{w2.capitalize}, or 3. #{w3.capitalize}"
     ans = gets.chomp.to_i
     if ans == 1
-      return [w1,@name,@victim]
+      return [w1,@name,@victim,0]
     elsif ans == 2
-      return [w2,@name,@victim]
+      return [w2,@name,@victim,0]
     elsif ans == 3
-      return [w3,@name,@victim]
+      return [w3,@name,@victim,0]
     else
       wrong_answer()
+      return [w1,@name,@victim,1]
     end
   end
 

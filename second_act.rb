@@ -7,8 +7,14 @@ class Second < Story
     @murder_weapon = info_arr[0]
     @name = info_arr[1]
     @victim = info_arr[2]
+    @sent = info_arr[3]
     @murderer1 = ""
-    @sent = 0
+  end
+
+  def continue_to_two
+    if @sent == 0
+      part_two()
+    end
   end
 
   def part_two
@@ -37,7 +43,7 @@ class Second < Story
       puts "Your conscience haunts you for the rest of your life, but you didn't die."
       end_game()
     elsif ans == 3
-      @sent = 1
+      @sent = 2
       go_to_part_three()
     else
       self.wrong_answer()
@@ -102,7 +108,7 @@ class Second < Story
     puts "2. Insist you saw something."
     ans = gets.chomp.to_i
     if ans == 1
-      @sent = 1
+      @sent = 2
       go_to_part_three()
     else
       murderer2 = get_another_murderer()
@@ -128,7 +134,7 @@ class Second < Story
         puts "#{murderer2} was waiting for #{@name}. #{@name} ded."
         end_game()
       else
-        @sent = 1
+        @sent = 2
         go_to_part_three()
       end
     end

@@ -8,8 +8,8 @@ class Third < Story
     @sent = info_arr[1]
   end
 
-  def continue
-    if @sent == 1
+  def continue_to_three
+    if @sent == 2
       part_three()
     end
   end

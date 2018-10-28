@@ -6,7 +6,7 @@ story1 = First.new
 story1.get_name
 
 story2 = Second.new(story1.part_one)
-story2.part_two
+story2.continue_to_two
 
 story3 = Third.new(story2.go_to_part_three)
-story3.continue
+story3.continue_to_three

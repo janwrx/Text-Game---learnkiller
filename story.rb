@@ -9,6 +9,7 @@ class Story
             ["Jez's travel guitar", "a macbook pro", "the over-sized whiteboard eraser"],
             ["the required shovel for this project", "a bloody bird scooter", "a decorative succulent"]]
     @adj_list = ["CRAAAZY","STUPID","...interesting...","humble","SEXY"]
+    @sent = 0
   end
   def end_game
     puts "GAME OVER!!!"
