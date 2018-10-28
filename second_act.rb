@@ -7,46 +7,49 @@ class Second < Story
     @murder_weapon = info_arr[0]
     @name = info_arr[1]
     @victim = info_arr[2]
-    @sent = info_arr[3]
+    @continue_game_sent = info_arr[3]
     @murderer1 = ""
   end
 
   def continue_to_two
-    if @sent == 0
+    if @continue_game_sent == 0
       part_two()
     end
   end
 
   def part_two
-    murderer1 = @staff[rand(8)]
-    @murderer1 = murderer1
+    @murderer1 = @staff[rand(8)]
     puts "In a state of shock, you decide to ... "
     puts "1. Scream"
     puts "2. Pretend you didn\'t see anything and go home."
     puts "3. Call 911 and start your morning challenge."
     ans = gets.chomp.to_i
     if ans == 1
-      puts "#{@name} screams a deafening, blood-curdling scream and runs out of the room."
-
-      puts "\"What happened!? What's wrong!? Who ded!?\" #{@murderer1} yells walking up to #{@name}."
-      puts
-      puts "#{@name} then explains what they found to #{@murderer1}."
-
-      if @weapon[0].include?(@murder_weapon)
-        first_arr_story()
-      elsif @weapon[1].include?(@murder_weapon)
-        second_arr_story()
-      else
-        third_arr_story()
-      end
+      scream()
     elsif ans == 2
       puts "Your conscience haunts you for the rest of your life, but you didn't die."
       end_game()
     elsif ans == 3
-      @sent = 2
+      @continue_game_sent = 2
       go_to_part_three()
     else
       self.wrong_answer()
+    end
+  end
+
+  def scream
+    puts "#{@name} screams a deafening, blood-curdling scream and runs out of the room."
+    puts
+    puts "\"What happened!? What's wrong!? Who ded!?\" #{@murderer1} yells walking up to #{@name}."
+    puts
+    puts "#{@name} then explains what they found to #{@murderer1}."
+
+    if @weapon[0].include?(@murder_weapon)
+      first_arr_story()
+    elsif @weapon[1].include?(@murder_weapon)
+      second_arr_story()
+    else
+      third_arr_story()
     end
   end
 
@@ -108,7 +111,7 @@ class Second < Story
     puts "2. Insist you saw something."
     ans = gets.chomp.to_i
     if ans == 1
-      @sent = 2
+      @continue_game_sent = 2
       go_to_part_three()
     else
       murderer2 = get_another_murderer()
@@ -134,7 +137,7 @@ class Second < Story
         puts "#{murderer2} was waiting for #{@name}. #{@name} ded."
         end_game()
       else
-        @sent = 2
+        @continue_game_sent = 2
         go_to_part_three()
       end
     end
@@ -160,9 +163,8 @@ class Second < Story
       return name
   end
 
-  def go_to_part_three
-    #return key variables
-    return [@name,@sent]
+  def go_to_part_three #return key variables
+    return [@name,@continue_game_sent]
   end
 
 end

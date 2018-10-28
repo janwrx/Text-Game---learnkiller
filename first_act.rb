@@ -23,13 +23,7 @@ class First < Story
   end
 
   def part_one
-    while true do
-      victim = @classmates[rand(15)]
-      if victim != @name
-        break
-      end
-    end
-    @victim = victim
+    get_victim()
     puts "Soo...#{@name}. You arrive one Friday morning in mid October. The air is crisp on your skin. You fumble with your phone to open the J ST Single Door and wait for Kisi to load. After what seems like an eternity because your cell data has decided to switch over to the LEARN WIFI, you are finally granted access to the building. You proceed down the hallway and enter the Hopper classroom, but something seems wrong."
     puts
     puts "After a near miss with a dislocated shoulder from the door, #{@name} finds #{@victim} dead on the floor."
@@ -52,4 +46,13 @@ class First < Story
     end
   end
 
+  def get_victim
+    while true do
+      victim = @classmates[rand(15)]
+      if victim != @name
+        break
+      end
+    end
+    @victim = victim
+  end
 end
