@@ -20,7 +20,7 @@ class Second < Story
     puts "3. Call 911 and start your morning challenge."
     ans = gets.chomp.to_i
     if ans == 1
-      puts "#{@name} screams deafening, blood-curdling scream and runs out of the room."
+      puts "#{@name} screams a deafening, blood-curdling scream and runs out of the room."
 
       puts "\"What happened!? What's wrong!? Who ded!?\" #{@murderer1} yells walking up to #{@name}."
       puts
@@ -34,6 +34,7 @@ class Second < Story
         third_arr_story()
       end
     elsif ans == 2
+      puts "Your conscience haunts you for the rest of your life, but you didn't die."
       end_game()
     elsif ans == 3
       @sent = 1
@@ -73,7 +74,7 @@ class Second < Story
   end
 
   def second_arr_story #guitar, eraser, macbook
-    puts "#{@murderer1} says that they saw someone come out of the Hopper classroom earlier that morning holding #{@murder_weapon}."
+    puts "#{@murderer1} says, \"I saw someone come out of the Hopper classroom earlier this morning holding #{@murder_weapon}!\""
     puts
     puts "\"Who was it?\" #{@name} asks."
     puts
@@ -120,6 +121,10 @@ class Second < Story
       puts "2. Fuhgeddaboudit and start your morning challenge."
       ans = gets.chomp.to_i
       if ans == 1
+        puts "#{@name} proceeds upstairs with caution. The staircase is dark like always, but it seems darker today."
+        puts
+        puts "Just as #{@name} was thinking about stopping to use one of those blacklight flashlights to look for clues, #{@name} hears a noise."
+        puts
         puts "#{murderer2} was waiting for #{@name}. #{@name} ded."
         end_game()
       else

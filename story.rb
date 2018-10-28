@@ -5,12 +5,13 @@ class Story
     @classmates = ["Andy", "Chris", "Dakota", "Eric", "Erik", "Evan", "Janice", "Julianne", "Kristen", "Leila", "Misun", "Ricci", "Sunil", "Willy"]
     @staff = ["Matt", "Rob", "Chelsea", "Bryan", "Damon", "TJ", "Jez", "Alyssa"]
     @weapon =
-            [["an empty keg", "some poisoned kombucha", "a plastic bloody fork from the breakroom"],
+            [["an empty keg", "some poisoned kombucha", "a bloodied, plastic fork from the breakroom"],
             ["Jez's travel guitar", "a macbook pro", "the over-sized whiteboard eraser"],
-            ["the required shovel for this project", "a bloody bird scooter", "a decorative succulent" ]]
+            ["the required shovel for this project", "a bloody bird scooter", "a decorative succulent"]]
+    @adj_list = ["CRAAAZY","STUPID","...interesting...","humble","SEXY"]
   end
   def end_game
-    puts "Game over!!!"
+    puts "GAME OVER!!!"
   end
 
   def wrong_answer

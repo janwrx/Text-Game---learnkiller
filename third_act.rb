@@ -26,18 +26,24 @@ class Third < Story
       puts
       puts "#{@name} decides to do the stretch goal. #{@name} starts to read it aloud:"
       puts
-      puts "I have buttons but I’m not a shirt,"
+      puts "\"I have buttons but I’m not a shirt,"
       puts "I have doors but I’m not a house,"
       puts "I go up and down but I’m not an umbrella,"
       puts "I need at least two stories but I’m not a book of fairytales,"
-      puts "I’m found in tall buildings but I’m not a penthouse."
+      puts "I’m found in tall buildings but I’m not a penthouse.\""
       puts
       puts "What am I?"
-      gets
-      puts "It's the elevator challenge. #{@name} dies from a migraine."
-      end_game()
+      ans = gets.chomp.capitalize
+      if ans == "Elevator"
+        puts "Good show! #{@name} solved it! Too bad it's still the elevator challenge."
+        puts "#{@name} dies from a migraine."
+        end_game()
+      else
+        puts "#{@name} guessed incorrectly. Too bad what you don't know still can hurt you."
+        puts "It's the elevator challenge." "#{@name} dies from a migraine."
+      end
     else
-      puts "Math has killed #{@name}. #{@name} ded."
+      puts " Basic Math has killed #{@name}. #{@name} ded."
       end_game()
     end
   end

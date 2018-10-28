@@ -18,8 +18,8 @@ class First < Story
       break if ans == "Yes" || ans == "Y"
     end
     @name = name
-    puts "That's a CRAAAZY name!"
-    puts 
+    puts "That's a #{@adj_list[rand(5)]} name!"
+    puts
   end
 
   def part_one
@@ -30,11 +30,11 @@ class First < Story
       end
     end
     @victim = victim
-    puts "Soo...#{@name}. You arrive one Friday morning in mid October. The air is crisp on your skin. You fumble with your phone to open the J ST. single door and wait for Kisi to load. After what seems like an eternity, you are finally granted access. You enter the Hopper classroom when something seems wrong."
+    puts "Soo...#{@name}. You arrive one Friday morning in mid October. The air is crisp on your skin. You fumble with your phone to open the J ST Single Door and wait for Kisi to load. After what seems like an eternity because your cell data has decided to switch over to the LEARN WIFI, you are finally granted access to the building. You proceed down the hallway and enter the Hopper classroom, but something seems wrong."
     puts
-    puts "You swing open the heavy Hopper door to find #{victim} dead on the floor."
+    puts "After a near miss with a dislocated shoulder from the door, #{@name} finds #{@victim} dead on the floor."
     puts
-    puts "You see something lying next to #{victim}'s lifeless corpse. What is it?"
+    puts "Something lying next to #{@victim}'s lifeless corpse. What is it?"
     w1 = @weapon[0][rand(3)]
     w2 = @weapon[1][rand(3)]
     w3 = @weapon[2][rand(3)]
@@ -47,7 +47,7 @@ class First < Story
     elsif ans == 3
       return [w3,@name,@victim]
     else
-      invalid
+      wrong_answer()
     end
   end
 
